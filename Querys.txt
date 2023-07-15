@@ -8,7 +8,7 @@ create table if not exist "Permiso"(
     Descripcion varchar(300),
     Rol int,
     FOREING KEY (Rol) REFERENCES Rol(Codigo_rol)
-);
+); 
 create table if not exist "Perfil"(
     Rut serial PRIMARY KEY,
     Nombre varchar(30),
