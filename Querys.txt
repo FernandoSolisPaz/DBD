@@ -1,0 +1,125 @@
+create table if not exist "Rol"(
+    Codigo_rol serial PRIMARY KEY,
+    Nombre_rol varchar(50)
+);
+create table if not exist "Permiso"(
+    Codigo_permiso serial PRIMARY KEY,
+    Nombre_permio varchar(30),
+    Descripcion varchar(300),
+    Rol int,
+    FOREING KEY (Rol) REFERENCES Rol(Codigo_rol)
+); 
+create table if not exist "Perfil"(
+    Rut serial PRIMARY KEY,
+    Nombre varchar(30),
+    Contraseña varchar(30),
+    Correo varchar(50),
+    Fecha_de_nacimiento int NOT NULL,
+    Rol int,
+    FOREING KEY (Rol) REFERENCES Rol(
+        Codigo_rol)
+);
+create table if not exist "Datos Bancarios"(
+    ID_datos serial PRIMARY KEY,
+    Numero_de_cuenta int,
+    Correo_transaccion varchar(50),
+    Nombre_banco varchar(50),
+    Tipo_de_cuenta varchar(50),
+    Nombre_tarjeta varchar(30),
+    Rul int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut)
+);
+create table if not exist "Ubicacion Geografica"(
+    ID_Ubicaciongeo serial PRIMARY KEY,
+    Pais varchar(30),
+    Ciudad varchar(30),
+    Rut int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut)
+);
+create table if not exist "Perfil_libro(FAV)"(
+    ID_favorito serial PRIMARY KEY,
+    Rating int,
+    Libro_is_fav boolean,
+    Rut int,
+    ID_libro int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut),
+    FOREING KEY (Libro) REFERENCES Libro(ID_libro)
+);
+create table if not exist Tipo_Libro (
+    ID_tipo_libro serial PRIMARY KEY,
+    Nombre_tipo_libro varchar
+);
+
+create table if not exist Restriccion_etaria (
+    ID_restriccion_etaria serial PRIMARY KEY,
+    Nombre_restriccion_etaria varchar
+);
+
+create table if not exist Restriccion_geografica (
+    ID_resticciongeo serial  PRIMARY KEY,
+    Pais varchar
+);
+
+create table if not exist Libro (
+    ID_libro serial PRIMARY KEY,
+    Stock int not null,
+    Cantidad_de_favs int not null,
+    Nombre_libro varchar,
+    Precio_unitario int not null,
+    Sinapsis varchar,
+    ID_tipo_libro int,
+    ID_restriccion_etaria int,
+    FOREIGN KEY (ID_tipo_libro) REFERENCES Tipo_Libro (ID_tipo_libro),
+    FOREIGN KEY (ID_restriccion_etaria) REFERENCES Restriccion_etaria(ID_restriccion_etaria)
+);
+
+create table if not exist Libro_Restriccion_Geografica (
+ID_Libro_Restriccion_geografica serial primary key,
+ID_restricciongeo int,
+ID_libro int,
+foreign key (ID_restricciongeo) references Resticcion_geografica(ID_retricciongeo),
+foreign key (ID_libro) references Libro (ID_libro)
+);
+
+create table if not exist Libro_carrito (
+    ID_agregar serial primary key,
+    ID_carrito int,
+    ID_libro int,
+    foreign key (ID_carrito) references Carrito (ID_Carrito),
+    foreign key (ID_libro) references Libro(ID_libro)
+);
+
+create table if not exist Perfil_libro_publica (
+    ID_publica serial primary key,
+    Rut int,
+    ID_libro int,
+    foreign key (Rut) references Perfil (Rut),
+    foreign key (ID_libro) references Libro(ID_libro)
+);
+
+create table if not exist "Carrito" (
+    id_carrito serial PRIMARY KEY,
+    rut int NOT NULL,
+    cantidad_de_libros int,
+    created_at date default CURRENT_DATE,
+    updated_at date default CURRENT_DATE
+);
+
+create table if not exist "Boleta" (
+    id_boleta serial PRIMARY KEY,
+    id_carrito int NOT NULL,
+    codigo_boleta varchar(50) NOT NULL,
+    articulos_comprados int NOT NULL,
+    precio_total int NOT NULL,
+    comprador varchar(50) NOT NULL
+);
+
+
+---Referenciacion para las llaves foraneas
+ALTER TABLE "Carrito"
+    ADD CONSTRAINT FK_Carrito_Perfil
+    FOREIGN KEY(rut) REFERENCES "Perfil"(rut);
+
+ALTER TABLE "Boleta"
+    ADD CONSTRAINT FK_Carrito_Boleta
+    FOREIGN KEY(id_carrito) REFERENCES "Carrito"(id_carrito);
