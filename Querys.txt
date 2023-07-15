@@ -48,4 +48,31 @@ create table if not exist Perfil_libro_publica (
     ID_libro int,
     foreign key (Rut) references Perfil (Rut),
     foreign key (ID_libro) references Libro(ID_libro)
-); 
+);
+
+create table if not exist "Carrito" (
+    id_carrito serial PRIMARY KEY,
+    rut int NOT NULL,
+    cantidad_de_libros int,
+    created_at date default CURRENT_DATE,
+    updated_at date default CURRENT_DATE
+);
+
+create table if not exist "Boleta" (
+    id_boleta serial PRIMARY KEY,
+    id_carrito int NOT NULL,
+    codigo_boleta varchar(50) NOT NULL,
+    articulos_comprados int NOT NULL,
+    precio_total int NOT NULL,
+    comprador varchar(50) NOT NULL
+);
+
+
+---Referenciacion para las llaves foraneas
+ALTER TABLE "Carrito"
+    ADD CONSTRAINT FK_Carrito_Perfil
+    FOREIGN KEY(rut) REFERENCES "Perfil"(rut);
+
+ALTER TABLE "Boleta"
+    ADD CONSTRAINT FK_Carrito_Boleta
+    FOREIGN KEY(id_carrito) REFERENCES "Carrito"(id_carrito);
