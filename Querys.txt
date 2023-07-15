@@ -1,0 +1,51 @@
+create table if not exist Tipo_Libro (
+    ID_tipo_libro serial PRIMARY KEY,
+    Nombre_tipo_libro varchar
+);
+
+create table if not exist Restriccion_etaria (
+    ID_restriccion_etaria serial PRIMARY KEY,
+    Nombre_restriccion_etaria varchar
+);
+
+create table if not exist Restriccion_geografica (
+    ID_resticciongeo serial  PRIMARY KEY,
+    Pais varchar
+);
+
+create table if not exist Libro (
+    ID_libro serial PRIMARY KEY,
+    Stock int not null,
+    Cantidad_de_favs int not null,
+    Nombre_libro varchar,
+    Precio_unitario int not null,
+    Sinapsis varchar,
+    ID_tipo_libro int,
+    ID_restriccion_etaria int,
+    FOREIGN KEY (ID_tipo_libro) REFERENCES Tipo_Libro (ID_tipo_libro),
+    FOREIGN KEY (ID_restriccion_etaria) REFERENCES Restriccion_etaria(ID_restriccion_etaria)
+);
+
+create table if not exist Libro_Restriccion_Geografica (
+ID_Libro_Restriccion_geografica serial primary key,
+ID_restricciongeo int,
+ID_libro int,
+foreign key (ID_restricciongeo) references Resticcion_geografica(ID_retricciongeo),
+foreign key (ID_libro) references Libro (ID_libro)
+);
+
+create table if not exist Libro_carrito (
+    ID_agregar serial primary key,
+    ID_carrito int,
+    ID_libro int,
+    foreign key (ID_carrito) references Carrito (ID_Carrito),
+    foreign key (ID_libro) references Libro(ID_libro)
+);
+
+create table if not exist Perfil_libro_publica (
+    ID_publica serial primary key,
+    Rut int,
+    ID_libro int,
+    foreign key (Rut) references Perfil (Rut),
+    foreign key (ID_libro) references Libro(ID_libro)
+); 
