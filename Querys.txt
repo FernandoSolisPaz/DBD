@@ -74,11 +74,11 @@ create table if not exist Libro (
 );
 
 create table if not exist Libro_Restriccion_Geografica (
-ID_Libro_Restriccion_geografica serial primary key,
-ID_restricciongeo int,
-ID_libro int,
-foreign key (ID_restricciongeo) references Resticcion_geografica(ID_retricciongeo),
-foreign key (ID_libro) references Libro (ID_libro)
+    ID_Libro_Restriccion_geografica serial primary key,
+    ID_restricciongeo int,
+    ID_libro int,
+    foreign key (ID_restricciongeo) references Resticcion_geografica(ID_retricciongeo),
+    foreign key (ID_libro) references Libro (ID_libro)
 );
 
 create table if not exist Libro_carrito (
