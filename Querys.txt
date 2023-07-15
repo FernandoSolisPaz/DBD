@@ -1,0 +1,47 @@
+create table "Rol"(
+    Codigo_rol serial PRIMARY KEY,
+    Nombre_rol varchar(50)
+);
+create table "Permiso"(
+    Codigo_permiso serial PRIMARY KEY,
+    Nombre_permio varchar(30),
+    Descripcion varchar(300),
+    Rol int,
+    FOREING KEY (Rol) REFERENCES Rol(Codigo_rol)
+);
+create table "Perfil"(
+    Rut serial PRIMARY KEY,
+    Nombre varchar(30),
+    Contraseña varchar(30),
+    Correo varchar(50),
+    Fecha_de_nacimiento int NOT NULL,
+    Rol int,
+    FOREING KEY (Rol) REFERENCES Rol(
+        Codigo_rol)
+);
+create table "Datos Bancarios"(
+    ID_datos serial PRIMARY KEY,
+    Numero_de_cuenta int,
+    Correo_transaccion varchar(50),
+    Nombre_banco varchar(50),
+    Tipo_de_cuenta varchar(50),
+    Nombre_tarjeta varchar(30),
+    Rul int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut)
+);
+create table "Ubicacion Geografica"(
+    ID_Ubicaciongeo serial PRIMARY KEY,
+    Pais varchar(30),
+    Ciudad varchar(30),
+    Rut int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut)
+);
+create table "Perfil_libro(FAV)"(
+    ID_favorito serial PRIMARY KEY,
+    Rating int,
+    Libro_is_fav boolean,
+    Rut int,
+    ID_libro int,
+    FOREING KEY (Perfil) REFERENCES Perfil(Rut),
+    FOREING KEY (Libro) REFERENCES Libro(ID_libro)
+);
