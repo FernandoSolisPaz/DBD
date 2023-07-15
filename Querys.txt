@@ -1,4 +1,4 @@
-create table if not exist"Rol"(
+create table if not exist "Rol"(
     Codigo_rol serial PRIMARY KEY,
     Nombre_rol varchar(50)
 );
