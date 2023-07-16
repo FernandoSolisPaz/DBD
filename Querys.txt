@@ -81,7 +81,7 @@ create table if not exists Perfil_libro_FAV(
 
 create table if not exists Restriccion_geografica (
     ID_restricciongeo serial  PRIMARY KEY,
-    Pais varchar
+    PaisGeo varchar
 );
 
 create table if not exists Libro_Restriccion_Geografica (
