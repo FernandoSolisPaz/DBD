@@ -20,6 +20,7 @@ create table if not exists Perfil(
     Rol int,
     FOREIGN KEY (Rol) REFERENCES Rol(Codigo_rol)
 );
+
 create table if not exists Datos_Bancarios(
     ID_datos serial PRIMARY KEY,
     Numero_de_cuenta int,

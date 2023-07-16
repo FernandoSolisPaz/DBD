@@ -84,3 +84,8 @@ INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (2, "Lector")
 
 -- Usuario: Autor
 INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (3, "Autor")
+
+
+
+
+--
