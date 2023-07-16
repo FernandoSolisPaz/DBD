@@ -1,0 +1,74 @@
+-- INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (id_generado, 'nombre_genero');
+
+-- Género: Novela
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (1, 'Novela');
+
+-- Género: Poesía
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (2, 'Poesía');
+
+-- Género: Drama
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (3, 'Drama');
+
+-- Género: Ciencia ficción
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (4, 'Ciencia ficción');
+
+-- Género: Misterio
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (5, 'Misterio');
+
+-- Género: Fantasía
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (6, 'Fantasía');
+
+-- Género: Historia
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (7, 'Historia');
+
+-- Género: Biografía
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (8, 'Biografía');
+
+-- Género: Ensayo
+INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (9, 'Ensayo');
+
+
+
+
+-- INSERT INTO public.tipo_libro(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (id_generado, 'nombre_restriccion');
+
+-- Restricción de edad: Todos los públicos
+INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (1, 'Todos los públicos');
+
+-- Restricción de edad: Apto para mayores de 12 años
+INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (2, 'Apto para mayores de 12 años');
+
+-- Restricción de edad: Apto para mayores de 16 años
+INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (3, 'Apto para mayores de 16 años');
+
+-- Restricción de edad: Apto para mayores de 18 años
+INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (4, 'Apto para mayores de 18 años');
+
+
+
+
+-- INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+-- VALUES (id_generado, stock_aleatorio, 0, 'nombre_libro', precio_unitario_aleatorio, 'sinapsis', id_tipo_libro, id_restriccion_etaria);
+
+-- Libro: "Cien años de soledad" (Ejemplo)
+INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+VALUES (1, 10, 0, 'Cien años de soledad', 49, 'La historia de la familia Buendía en el pueblo ficticio de Macondo', 1, 1);
+
+-- Libro: "Romeo y Julieta" (Ejemplo)
+INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+VALUES (2, 5, 0, 'Romeo y Julieta', 29, 'La trágica historia de amor de dos jóvenes de familias rivales', 3, 2);
+
+-- Libro: "1984" (Ejemplo)
+INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+VALUES (3, 8, 0, '1984', 39, 'Una distopía que muestra un futuro totalitario y vigilante', 4, 3);
+
+-- Libro: "Orgullo y prejuicio" (Ejemplo)
+INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+VALUES (4, 12, 0, 'Orgullo y prejuicio', 34, 'La historia de amor entre Elizabeth Bennet y Fitzwilliam Darcy', 1, 1);
+
+-- Libro: "El gran Gatsby" (Ejemplo)
+INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
+VALUES (5, 3, 0, 'El gran Gatsby', 27, 'La vida lujosa y decadente de Jay Gatsby en los años 20', 2, 2);
+
+
+-- ver lo del tabla generos
