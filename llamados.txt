@@ -16,4 +16,4 @@ SELECT ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS ranking, l.nombre_libro, CO
 FROM perfil_libro_fav plf, libro l
 WHERE plf.Libro_is_fav = true and plf.ID_libro = l.ID_libro
 GROUP BY l.ID_libro
-ORDER BY contador DESC;
+ORDER BY N_Fav DESC;
