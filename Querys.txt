@@ -66,7 +66,7 @@ create table if not exists Libro_tipo_libro (
     ID_tipo_libro int,
     ID_libro int,
     FOREIGN KEY (ID_tipo_libro) REFERENCES Tipo_Libro(ID_tipo_libro),
-    FOREIGN KEY (ID_libro) REFERNCES Libro(ID_libro)
+    FOREIGN KEY (ID_libro) REFERENCES Libro(ID_libro)
 );
 
 create table if not exists Perfil_libro_FAV(
