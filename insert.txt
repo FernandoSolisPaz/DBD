@@ -48,33 +48,39 @@ INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_
 
 
 -- INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
--- VALUES (id_generado, stock_aleatorio, 0, 'nombre_libro', precio_unitario_aleatorio, 'sinapsis', id_tipo_libro, id_restriccion_etaria);
+-- VALUES (id_generado, stock_aleatorio, 0, 'nombre_libro', precio_unitario_aleatorio, 'sinapsis', id_restriccion_etaria);
 
 -- Libro: "Cien años de soledad" (Ejemplo)
 INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
-VALUES (1, 10, 0, 'Cien años de soledad', 49, 'La historia de la familia Buendía en el pueblo ficticio de Macondo', 1, 1);
+VALUES (1, 10, 0, 'Cien años de soledad', 49, 'La historia de la familia Buendía en el pueblo ficticio de Macondo', 1);
 
 -- Libro: "Romeo y Julieta" (Ejemplo)
 INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
-VALUES (2, 5, 0, 'Romeo y Julieta', 29, 'La trágica historia de amor de dos jóvenes de familias rivales', 3, 2);
+VALUES (2, 5, 0, 'Romeo y Julieta', 29, 'La trágica historia de amor de dos jóvenes de familias rivales', 2);
 
 -- Libro: "1984" (Ejemplo)
 INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
-VALUES (3, 8, 0, '1984', 39, 'Una distopía que muestra un futuro totalitario y vigilante', 4, 3);
+VALUES (3, 8, 0, '1984', 39, 'Una distopía que muestra un futuro totalitario y vigilante', 3);
 
 -- Libro: "Orgullo y prejuicio" (Ejemplo)
 INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
-VALUES (4, 12, 0, 'Orgullo y prejuicio', 34, 'La historia de amor entre Elizabeth Bennet y Fitzwilliam Darcy', 1, 1);
+VALUES (4, 12, 0, 'Orgullo y prejuicio', 34, 'La historia de amor entre Elizabeth Bennet y Fitzwilliam Darcy', 1);
 
 -- Libro: "El gran Gatsby" (Ejemplo)
 INSERT INTO public.libro(ID_libro, Stock, Cantidad_de_favs, Nombre_libro, Precio_unitario, Sinapsis, ID_tipo_libro, ID_restriccion_etaria)
-VALUES (5, 3, 0, 'El gran Gatsby', 27, 'La vida lujosa y decadente de Jay Gatsby en los años 20', 2, 2);
+VALUES (5, 3, 0, 'El gran Gatsby', 27, 'La vida lujosa y decadente de Jay Gatsby en los años 20', 2);
 
 
--- ver lo del tabla generos
+
 
 -- INSERT INTO public.rol(codigo_rol, nombre_rol)
 -- VALUES (codigo_rol, "nombre_rol);
 
 -- Usuario: Administrador
-INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (1, ")
+INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (1, "Administrador")
+
+-- Usuario: Lector
+INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (2, "Lector")
+
+-- Usuario: Autor
+INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (3, "Autor")
