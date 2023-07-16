@@ -45,18 +45,84 @@ VALUES (19900907, 'Javier Torres', 'javier456', 'javier@gmail.com', '1995-01-22'
 
 --------------------------------Permisos---------------------------------------
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (1, 'Crear_libro', 'Permite publicar un nuevo libro', 0);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (1, 'Crear_libro', 'Permite crear un nuevo libro');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (2, 'Eliminar_libro', 'Permite remover un libro', 0);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (2, 'Eliminar_libro', 'Permite remover un libro');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (3, 'Crear_libro', 'Permite publicar un nuevo libro', 2);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (3, 'Ocultar_libro', 'Permite poner el libro en privado(limitar visualización)');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (4, 'Eliminar_libro', 'Permite remover un libro', 2);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (4, 'Agregar_fav', 'Permite a un usuario agregar un libro a fav');
 
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (5, 'Publicar_libro', 'Permite publicar un libro');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (6, 'Modificar_libro', 'Permite cambiar los atributos de un libro');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (7, 'Eliminar_User', 'Permite remover un usuario de la pagina');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (8, 'Visualizar_libro', 'Permite ver las caracteristicas de un libro');
+
+--------------------------------Permisos_Rol---------------------------------------
+
+
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 1, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 2, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 3, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 4, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 5, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 6, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 7, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 8, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 4, 1);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 8, 1);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 1, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 2, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 3, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 4, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 5, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 6, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 8, 0);
 
 --------------------------------Datos_bancarios----------------------------------
 
