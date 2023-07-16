@@ -6,7 +6,7 @@ create table if not exists Rol(
 create table if not exists Permiso(
     Codigo_permiso serial PRIMARY KEY,
     Nombre_permiso varchar(30),
-    Descripcion varchar(300),
+    Descripcion varchar(300)
 );
 
 create table if not exists Permiso_Rol(
@@ -14,8 +14,8 @@ create table if not exists Permiso_Rol(
     Codigo_Permiso int,
     Codigo_Rol int,
     FOREIGN KEY (Codigo_Permiso) REFERENCES Permiso(Codigo_permiso),
-    FOREIGN KEY (Codigo_Rol) REFERENCES Rol(Codigo_rol),
-) 
+    FOREIGN KEY (Codigo_Rol) REFERENCES Rol(Codigo_rol)
+); 
 
 create table if not exists Perfil(
     Rut serial PRIMARY KEY,
