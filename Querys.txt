@@ -115,6 +115,7 @@ create table if not exists Perfil_libro_publica (
     foreign key (ID_libro) references Libro(ID_libro)
 );
 
+
 create table if not exists Boleta (
     id_boleta serial PRIMARY KEY,
     id_carrito int NOT NULL,
@@ -126,6 +127,7 @@ create table if not exists Boleta (
 
 
 ---Referenciacion para las llaves foraneas
+
 ALTER TABLE Carrito
     ADD CONSTRAINT FK_Carrito_Perfil
     FOREIGN KEY(rut) REFERENCES Perfil(rut);
