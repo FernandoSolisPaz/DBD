@@ -1,9 +1,9 @@
-select l.nombre_libro
-from perfil_libro_fav plf, libro l, perfil p
-where p.nombre = 'Juan Pérez' and p.rut = plf.rut and plf.libro_is_fav = true
+SELECT l.nombre_libro
+FROM perfil_libro_fav plf, libro l, perfil p
+WHERE p.nombre = 'Juan Pérez' and p.rut = plf.rut and plf.libro_is_fav = true
 and plf.id_libro = l.id_libro
 
-SELECT l.nombre_libro, ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS ranking, COUNT(*) AS contador
+SELECT l.nombre_libro, ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS ranking, COUNT(*) AS 
 FROM perfil_libro_fav plf, libro l
 WHERE plf.Libro_is_fav = true and plf.ID_libro = l.ID_libro
 GROUP BY l.ID_libro
