@@ -30,7 +30,7 @@ INSERT INTO public.tipo_libro(id_tipo_libro, nombre_tipo_libro) VALUES (9, 'Ensa
 
 
 
--- INSERT INTO public.tipo_libro(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (id_generado, 'nombre_restriccion');
+-- INSERT INTO public.restriccion_etarialibro (id_restriccion_etaria, nombre_restriccion_etaria) VALUES (id_generado, 'nombre_restriccion');
 
 -- Restricción de edad: Todos los públicos
 INSERT INTO public.restriccion_etaria(id_restriccion_etaria, nombre_restriccion_etaria) VALUES (1, 'Todos los públicos');
@@ -72,3 +72,9 @@ VALUES (5, 3, 0, 'El gran Gatsby', 27, 'La vida lujosa y decadente de Jay Gatsby
 
 
 -- ver lo del tabla generos
+
+-- INSERT INTO public.rol(codigo_rol, nombre_rol)
+-- VALUES (codigo_rol, "nombre_rol);
+
+-- Usuario: Administrador
+INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (1, ")
