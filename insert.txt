@@ -78,3 +78,144 @@ VALUES (5, 3, 0, 'El gran Gatsby', 27, 'La vida lujosa y decadente de Jay Gatsby
 
 -- Usuario: Administrador
 INSERT INTO public.rol(codigo_rol, nombre_rol) VALUES (1, ")
+
+----------------------------------PERFIL--------------------------------------
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19900101, 'Juan Pérez', 'secreto123', 'juan@gmail.com', '1989-07-15', 0);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19851210, 'María López', 'maria123', 'maria@gmail.com', '1991-02-28', 1);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19781127, 'Carlos Rodríguez', 'contraseña123', 'carlos@gmail.com', '1992-05-03', 2);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19950215, 'Ana Martínez', 'clave321', 'ana@gmail.com', '1988-11-10', 0);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19821003, 'Pedro Gómez', 'password', 'pedro@gmail.com', '1987-09-21', 1);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19940820, 'Laura González', 'laura321', 'laura@gmail.com', '1993-12-08', 2);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19910105, 'Fernando Silva', 'fernando123', 'fernando@gmail.com', '1986-04-17', 1);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19980228, 'Sofía Hernández', 'sofia567', 'sofia@gmail.com', '1994-10-12', 0);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19930512, 'Luisa Ramírez', 'luisa789', 'luisa@gmail.com', '1985-08-06', 2);
+
+INSERT INTO Perfil (Rut, Nombre, Contraseña, Correo, Fecha_de_nacimiento, Rol)
+VALUES (19900907, 'Javier Torres', 'javier456', 'javier@gmail.com', '1995-01-22', 1);
+--------------------------------Permisos---------------------------------------
+
+INSERT INTO Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
+VALUES (1, Crear_libro, 'Permite publicar un nuevo libro', 1);
+
+INSERT INTO Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
+VALUES (2, Eliminar_libro, 'Permite remover un libro', 1);
+
+INSERT INTO Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
+VALUES (3, Crear_libro, 'Permite publicar un nuevo libro', 1);
+
+
+--------------------------------Datos_bancarios----------------------------------
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (1234567890, 'javier@gmail.com', 'Banco A', 'Cuenta de ahorros', 'Tarjeta A', 19900907);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (9876543210, 'luisa@gmail.com', 'Banco B', 'Cuenta corriente', 'Tarjeta B', 19930512);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (5678901234, 'sofia@gmail.com', 'Banco A', 'Cuenta de ahorros', 'Tarjeta C', 19980228);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (4321098765, 'fernando@gmail.com', 'Banco D', 'Cuenta corriente', 'Tarjeta D', 19910105);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (9870123456, 'laura@gmail.com', 'Banco C', 'Cuenta de ahorros', 'Tarjeta E', 19940820);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (5432109876, 'pedro@gmail.com', 'Banco B', 'Cuenta corriente', 'Tarjeta F', 19821003);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (1234509876, 'ana@gmail.com', 'Banco B', 'Cuenta de ahorros', 'Tarjeta G', 19950215);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (9876012345, 'carlos@gmail.com', 'Banco D', 'Cuenta corriente', 'Tarjeta H', 19781127);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (5678091234, 'maria@gmail.com', 'Banco A', 'Cuenta de ahorros', 'Tarjeta I', 19851210);
+
+INSERT INTO Datos Bancarios (Numero_de_cuenta, Correo_transaccion, Nombre_banco, Tipo_de_cuenta, Nombre_tarjeta, Rul)
+VALUES (4321876543, 'juan@gmail.com', 'Banco A', 'Cuenta corriente', 'Tarjeta J', 19900101);
+
+--------------------------------Ubicación_Geografica----------------------------------
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Estados Unidos', 'Nueva York', 19900101);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('España', 'Madrid', 19851210);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Argentina', 'Buenos Aires', 19781127);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('México', 'Ciudad de México', 19950215);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Brasil', 'Río de Janeiro', 19821003);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Colombia', 'Bogotá', 19940820);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Chile', 'Santiago', 19910105);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Perú', 'Lima', 19980228);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Ecuador', 'Quito', 19930512);
+
+INSERT INTO Ubicacion Geografica (Pais, Ciudad, Rut) VALUES ('Venezuela', 'Caracas', 19900907);
+
+--------------------------------Carrito----------------------------------
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (1, 19900101, 3);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (2, 19851210, 1);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (3, 19781127, 5);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (4, 19950215, 2);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (5, 19821003, 4);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (6, 19940820, 2);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (7, 19910105, 3);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (8, 19980228, 1);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (9, 19930512, 2);
+
+INSERT INTO Carrito (id_carrito, rut, cantidad_de_libros) VALUES (10, 19900907, 4);
+
+
+
+--------------------------------Boleta----------------------------------
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (1, 1, 'B-001', 3, 150, 'Juan Pérez');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (2, 2, 'B-002', 1, 50, 'María López');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (3, 3, 'B-003', 5, 250, 'Carlos Rodríguez');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (4, 4, 'B-004', 2, 100, 'Ana Martínez');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (5, 5, 'B-005', 4, 200, 'Pedro Gómez');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (6, 6, 'B-006', 2, 100, 'Laura González');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (7, 7, 'B-007', 3, 150, 'Fernando Silva');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (8, 8, 'B-008', 1, 50, 'Sofía Hernández');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (9, 9, 'B-009', 2, 100, 'Luisa Ramírez');
+
+INSERT INTO Boleta (id_boleta, id_carrito, codigo_boleta, articulos_comprados, precio_total, comprador) VALUES (10, 10, 'B-010', 4, 200, 'Javier Torres');
