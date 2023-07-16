@@ -384,17 +384,29 @@ INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_l
 
 INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (4, 5, true, 19950215 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (5, 5, true, 19980228 , 8);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (5, 5, true, 19821003, 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (6, 3, false, 19781127 , 7);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (6, 5, true, 19940820 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (7, 5, true, 19930512 , 5);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (7, 5, true, 19910105 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (8, 5, true, 19900907 , 2);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (8, 5, true, 19980228 , 8);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (9, 3, false, 19851210 , 6);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (9, 5, true, 19900101 , 8);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (10, 2, false, 19930512 , 5);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (10, 3, false, 19781127 , 7);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (11, 5, true, 19930512 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (12, 5, true, 19851210 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (13, 5, true, 19980228 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (14, 5, true, 19900907 , 2);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (15, 3, false, 19851210 , 6);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (16, 2, false, 19930512 , 5);
 
 
 

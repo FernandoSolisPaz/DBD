@@ -1,0 +1,19 @@
+--Encontrar Favs de un Usuario
+--Se elige el nombre y luego en base a ese nombre se busca el rut, luego se selecciona este en la
+--tabla perfil_libro_fav para luego encontrar todos los libros que tienen libro_is_fav = true, de ahi se
+--el nombre de la tabla libro
+SELECT l.nombre_libro 
+FROM perfil_libro_fav plf, libro l, perfil p
+WHERE p.nombre = 'Juan Pérez' and p.rut = plf.rut and plf.libro_is_fav = true
+and plf.id_libro = l.id_libro
+
+--Ranking libros Favs
+--Se genera una tabla con el nombre del libro, su posicion en el ranking y el numero de favoritos
+--de ahi se busca de la tabla Perfil_libro_FAV todos los que tienen true luego selecciona desde la
+--tabla libro las id en orden de cuenta descendente, luego obtiene los nombres y las cuentas ademas de
+--el numero de favs
+SELECT ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS ranking, l.nombre_libro, COUNT(*) AS N_Fav
+FROM perfil_libro_fav plf, libro l
+WHERE plf.Libro_is_fav = true and plf.ID_libro = l.ID_libro
+GROUP BY l.ID_libro
+ORDER BY contador DESC;
