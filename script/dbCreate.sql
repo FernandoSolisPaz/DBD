@@ -1,13 +1,20 @@
+-- Creacion Tabla Rol
+
+
 create table if not exists Rol(
     Codigo_rol serial PRIMARY KEY,
     Nombre_rol varchar(50)
 );
+
+-- Creacion Tabla Permiso
 
 create table if not exists Permiso(
     Codigo_permiso serial PRIMARY KEY,
     Nombre_permiso varchar(30),
     Descripcion varchar(300)
 );
+
+-- Creacion Tabla Permiso_Rol
 
 create table if not exists Permiso_Rol(
     ID_Permiso_Rol serial PRIMARY KEY,
@@ -16,6 +23,9 @@ create table if not exists Permiso_Rol(
     FOREIGN KEY (Codigo_Permiso) REFERENCES Permiso(Codigo_permiso),
     FOREIGN KEY (Codigo_Rol) REFERENCES Rol(Codigo_rol)
 ); 
+
+
+-- Creacion Tabla Perfil
 
 create table if not exists Perfil(
     Rut serial PRIMARY KEY,
@@ -26,6 +36,8 @@ create table if not exists Perfil(
     Rol int,
     FOREIGN KEY (Rol) REFERENCES Rol(Codigo_rol)
 );
+
+-- Creacion Tabla Datos Bancarios
 
 create table if not exists Datos_Bancarios(
     ID_datos serial PRIMARY KEY,
@@ -38,6 +50,8 @@ create table if not exists Datos_Bancarios(
     FOREIGN KEY (Rut) REFERENCES Perfil(Rut)
 );
 
+-- Creacion Tabla Ubicacion Geografica
+
 create table if not exists Ubicacion_Geografica(
     ID_Ubicaciongeo serial PRIMARY KEY,
     Pais varchar(30),
@@ -46,15 +60,21 @@ create table if not exists Ubicacion_Geografica(
     FOREIGN KEY (Rut) REFERENCES Perfil(Rut)
 );
 
+-- Creacion Tabla Restriccion etaria
+
 create table if not exists Restriccion_etaria (
     ID_restriccion_etaria serial PRIMARY KEY,
     Nombre_restriccion_etaria varchar
 );
 
+-- Creacion Tabla Tipo Libro
+
 create table if not exists Tipo_Libro (
     ID_tipo_libro serial PRIMARY KEY,
     Nombre_tipo_libro varchar
 );
+
+-- Creacion Tabla Libro
 
 create table if not exists Libro (
     ID_libro serial PRIMARY KEY,
@@ -68,12 +88,16 @@ create table if not exists Libro (
     FOREIGN KEY (ID_restriccion_etaria) REFERENCES Restriccion_etaria(ID_restriccion_etaria)
 );
 
+-- Creacion Tabla Libro tipo Libro
+
 create table if not exists Libro_tipo_libro (
     ID_tipo_libro int,
     ID_libro int,
     FOREIGN KEY (ID_tipo_libro) REFERENCES Tipo_Libro(ID_tipo_libro),
     FOREIGN KEY (ID_libro) REFERENCES Libro(ID_libro)
 );
+
+-- Creacion Tabla Perfil libro FAV
 
 create table if not exists Perfil_libro_FAV(
     ID_favorito serial PRIMARY KEY,
@@ -85,10 +109,14 @@ create table if not exists Perfil_libro_FAV(
     FOREIGN KEY (ID_libro) REFERENCES Libro(ID_libro)
 );
 
+-- Creacion Tabla Restriccion geografica
+
 create table if not exists Restriccion_geografica (
     ID_restricciongeo serial  PRIMARY KEY,
     PaisGeo varchar
 );
+
+-- Creacion Tabla Libro_Restriccion_Geografica
 
 create table if not exists Libro_Restriccion_Geografica (
     ID_Libro_Restriccion_geografica serial primary key,
@@ -98,6 +126,9 @@ create table if not exists Libro_Restriccion_Geografica (
     foreign key (ID_libro) references Libro (ID_libro)
 );
 
+
+-- Creacion Tabla Carrito
+
 create table if not exists Carrito (
     id_carrito serial PRIMARY KEY,
     rut int NOT NULL,
@@ -105,6 +136,8 @@ create table if not exists Carrito (
     created_at date default CURRENT_DATE,
     updated_at date default CURRENT_DATE
 );
+
+-- Creacion Tabla Libro_carrito
 
 create table if not exists Libro_carrito (
     ID_agregar serial primary key,
@@ -114,6 +147,8 @@ create table if not exists Libro_carrito (
     foreign key (ID_libro) references Libro(ID_libro)
 );
 
+-- Creacion Tabla Perfil_libro_publica
+
 create table if not exists Perfil_libro_publica (
     ID_publica serial primary key,
     Rut int,
@@ -122,6 +157,7 @@ create table if not exists Perfil_libro_publica (
     foreign key (ID_libro) references Libro(ID_libro)
 );
 
+-- Creacion Tabla Boleta
 
 create table if not exists Boleta (
     id_boleta serial PRIMARY KEY,
