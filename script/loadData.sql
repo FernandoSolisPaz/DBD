@@ -45,18 +45,84 @@ VALUES (19900907, 'Javier Torres', 'javier456', 'javier@gmail.com', '1995-01-22'
 
 --------------------------------Permisos---------------------------------------
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (1, 'Crear_libro', 'Permite publicar un nuevo libro', 0);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (1, 'Crear_libro', 'Permite crear un nuevo libro');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (2, 'Eliminar_libro', 'Permite remover un libro', 0);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (2, 'Eliminar_libro', 'Permite remover un libro');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (3, 'Crear_libro', 'Permite publicar un nuevo libro', 2);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (3, 'Ocultar_libro', 'Permite poner el libro en privado(limitar visualización)');
 
-INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion, Rol)
-VALUES (4, 'Eliminar_libro', 'Permite remover un libro', 2);
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (4, 'Agregar_fav', 'Permite a un usuario agregar un libro a fav');
 
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (5, 'Publicar_libro', 'Permite publicar un libro');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (6, 'Modificar_libro', 'Permite cambiar los atributos de un libro');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (7, 'Eliminar_User', 'Permite remover un usuario de la pagina');
+
+INSERT INTO public.Permiso (Codigo_permiso, Nombre_permiso, Descripcion)
+VALUES (8, 'Visualizar_libro', 'Permite ver las caracteristicas de un libro');
+
+--------------------------------Permisos_Rol---------------------------------------
+
+
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (0, 1, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (1, 2, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (2, 3, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (3, 4, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (4, 5, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (5, 6, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (6, 7, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (7, 8, 2);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (8, 4, 1);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (9, 8, 1);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (10, 1, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (11, 2, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (12, 3, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (13, 4, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (14, 5, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (15, 6, 0);
+
+INSERT INTO public.Permiso_Rol (ID_Permiso_Rol, Codigo_Permiso, Codigo_Rol)
+VALUES (16, 8, 0);
 
 --------------------------------Datos_bancarios----------------------------------
 
@@ -384,17 +450,29 @@ INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_l
 
 INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (4, 5, true, 19950215 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (5, 5, true, 19980228 , 8);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (5, 5, true, 19821003, 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (6, 3, false, 19781127 , 7);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (6, 5, true, 19940820 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (7, 5, true, 19930512 , 5);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (7, 5, true, 19910105 , 7);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (8, 5, true, 19900907 , 2);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (8, 5, true, 19980228 , 8);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (9, 3, false, 19851210 , 6);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (9, 5, true, 19900101 , 8);
 
-INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (10, 2, false, 19930512 , 5);
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (10, 3, false, 19781127 , 7);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (11, 5, true, 19930512 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (12, 5, true, 19851210 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (13, 5, true, 19980228 , 5);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (14, 5, true, 19900907 , 2);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (15, 3, false, 19851210 , 6);
+
+INSERT INTO public.Perfil_libro_FAV(ID_favorito, Rating, Libro_is_fav, Rut, ID_libro) VALUES (16, 2, false, 19930512 , 5);
 
 
 
