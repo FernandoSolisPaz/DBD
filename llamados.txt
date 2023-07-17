@@ -1,19 +1,92 @@
---Encontrar Favs de un Usuario
---Se elige el nombre y luego en base a ese nombre se busca el rut, luego se selecciona este en la
---tabla perfil_libro_fav para luego encontrar todos los libros que tienen libro_is_fav = true, de ahi se
---el nombre de la tabla libro
-SELECT l.nombre_libro 
-FROM perfil_libro_fav plf, libro l, perfil p
-WHERE p.nombre = 'Juan Pérez' and p.rut = plf.rut and plf.libro_is_fav = true
-and plf.id_libro = l.id_libro
 
+-- En este archivo se encuentras las consultas solicitadas
+
+---------------------------Consulta numero 1---------------------------
+--"Agregar un producto al carrito de compras"
+-----------------------------------------------------------------------
+--Primero se debe relacionar el libro con el carrito, en la tabla intermedia que se llama "libro_carrito"
+INSERT INTO libro_carrito
+Values (28,4,3);
+
+--Luego se debe actualizar el atributo cantidad de libros de la  tabla "carrito" 
+--y el id del carrito relacionado con el libro, sumandole +1
+UPDATE carrito 
+Set cantidad_de_libros = (carrito.cantidad_de_libros) + 1 
+Where carrito.id_carrito = 4;
+
+---------------------------Consulta numero 2---------------------------
+--"Eliminar un producto del carrito de compras"
+-----------------------------------------------------------------------
+
+--Primero se debe eliminar la relacion que existe entre el carrito y el libro, de la tabla intermedia que se llama "libro_carrito"
+--Ademas de esto se debe tener cuidado con cual dato se esta eliminando de la tabla intermedia, debido a esto se 
+--asocia apartir del id del libro y del carrito
+Delete FROM libro_carrito
+Where libro_carrito.id_libro = 3 AND libro_carrito.id_carrito = 4;
+
+--Luego se debe actualizar la tabla llamada "carrito", descontando 1 a la cantidad de libros, segun el id respectivo del carrito
+UPDATE carrito 
+Set cantidad_de_libros = (carrito.cantidad_de_libros) - 1 
+Where carrito.id_carrito = 4;
+
+---------------------------Consulta numero 3---------------------------
+--"Mostrar los productos del carrito de compras"
+-----------------------------------------------------------------------
+--Para lograr realizar la sentencia se utilizan las tablas: 
+--Libro, donde se tienen todos los libros cargados
+--Libro_carrito, donde se tiene la relacion entre el ID carrito y el ID libro
+--Carrito, donde se tienen almacenados todos los carritos
+--Posterior a esto, se realizan las condiciones necesarias para filtrar los productos correspondientes al Id_carrito 3
+Select libro_carrito.id_carrito, libro.Nombre_libro
+From Libro_carrito, libro
+Where Libro_carrito.id_carrito = 3  AND Libro_carrito.ID_libro = Libro.ID_libro;
+
+---------------------------Consulta numero 4---------------------------
+--"Mostrar el precio total a pagar por el carrito de compras"
+-----------------------------------------------------------------------
+--Para lograr realizar la sentencia se utilizan las tablas:
+--Carrito, donde se tienen todos los libros cargados
+--Boleta, donde se tiene el total a pagar por el carrito que tenga asociado
+--Posterior a esto, se realizan las condiciones necesarias para filtrar el la boleta que tiene  al Id_carrito 3
+Select carrito.id_carrito, boleta.precio_total
+From carrito, boleta
+Where carrito.id_carrito = boleta.id_carrito AND carrito.id_carrito = 3;
+
+---------------------------Consulta numero 5---------------------------
+--"Calcular el promedio de libros publicados por cada autor"
+-----------------------------------------------------------------------
+--
+SELECT COUNT(Perfil_libro_publica.ID_libro) / COUNT(DISTINCT Perfil_libro_publica.Rut) AS promedio_libros
+FROM Perfil_libro_publica;
+
+
+
+---------------------------Consulta numero 6---------------------------
+--"Mostrar ranking de los libros que más personas tienen en favorito"
+-----------------------------------------------------------------------
 --Ranking libros Favs
 --Se genera una tabla con el nombre del libro, su posicion en el ranking y el numero de favoritos
 --de ahi se busca de la tabla Perfil_libro_FAV todos los que tienen true luego selecciona desde la
 --tabla libro las id en orden de cuenta descendente, luego obtiene los nombres y las cuentas ademas de
 --el numero de favs
+
 SELECT ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS ranking, l.nombre_libro, COUNT(*) AS N_Fav
 FROM perfil_libro_fav plf, libro l
 WHERE plf.Libro_is_fav = true and plf.ID_libro = l.ID_libro
 GROUP BY l.ID_libro
 ORDER BY N_Fav DESC;
+
+
+---------------------------Consulta numero 7---------------------------
+--"Mostrar libros favoritos de un usuario"
+-----------------------------------------------------------------------
+--Encontrar Favs de un Usuario
+--Se elige el nombre y luego en base a ese nombre se busca el rut, luego se selecciona este en la
+--tabla perfil_libro_fav para luego encontrar todos los libros que tienen libro_is_fav = true, de ahi se
+--el nombre de la tabla libro
+
+SELECT l.nombre_libro 
+FROM perfil_libro_fav plf, libro l, perfil p
+WHERE p.nombre = 'Juan Pérez' and p.rut = plf.rut and plf.libro_is_fav = true
+and plf.id_libro = l.id_libro;
+
